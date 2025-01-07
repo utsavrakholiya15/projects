@@ -1,0 +1,224 @@
+.todo {
+  min-height: 100vh;
+  background: #010911;
+  // color: #6EACDA;
+  color: white;
+  user-select: none;
+}
+.todo-title {
+  padding-top: 30px;
+  h2 {
+    color: #d7e5ef;
+    font-size: 45px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  border-bottom: 1px solid #d7e5efcb;
+}
+.todo-btn {
+  margin-top: 20px;
+  button {
+    padding: 9px 36px;
+    background: #d4ebf8;
+    border: none;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 500;
+    color: #021220;
+    transition: .3s ease-in-out;
+    cursor: pointer;
+    &:hover{
+      background: #a7c9db;
+    }
+    .plus {
+      width: 18px;
+      height: 18px;
+      margin-top: 3px;
+      margin-right: 5px;
+    }
+  }
+}
+.todo-list {
+  max-width: 700px;
+  min-height: 50px;
+  border: 1px solid #d7e5ef;
+  margin-top: 40px;
+  margin-inline: auto;
+  border-radius: 9px;
+  padding: 16px;
+  p {
+    color: #e8f3fad0;
+    font-size: 18px;
+  }
+  .todo-list-item {
+    margin: 20px 0;
+  }
+  .todo-list-task {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    .todo-list-flex {
+      display: flex;
+      span {
+        display: inline-block;
+        margin-right: 20px;
+      }
+    }
+    .todo-list-delete {
+      cursor: pointer;
+      svg{
+        fill: rgb(194, 48, 48);
+        width: 23px;
+        height: 23px;
+      }
+    }
+  }
+  .summary {
+    color: #d4ebf892;
+    margin-left: 30px;
+    max-width: 570px;
+    word-break: break-all;
+  }
+}
+.task-adder-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.465);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .task-adder {
+    width: 300px;
+    background: #c3d2dd;
+    border-radius: 12px;
+    padding: 10px 16px 30px;
+    opacity: 0;
+    transform: translateY(-30px);
+    animation: down 0.2s forwards ease-in-out;
+  }
+  .input-div {
+    margin-top: 20px;
+    label {
+      font-size: 16px;
+      color: #010911;
+      font-weight: 500;
+      display: block;
+      span {
+        color: red;
+      }
+    }
+    input {
+      margin-top: 9px;
+      height: 40px;
+      border: 1px solid rgba(128, 128, 128, 0.419);
+      border-radius: 9px;
+      width: 100%;
+      outline: none;
+      padding: 16px;
+      transition: 0.4s ease-in-out;
+      font-size: 15px;
+      user-select: unset;
+      &:focus {
+        border: 1px solid black;
+      }
+    }
+  }
+  .task-adder-buttons {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    button:first-child {
+      background: transparent;
+      padding: 8px 12px;
+      border: none;
+      font-size: 14px;
+      color: #021220;
+      font-weight: 600;
+      border-radius: 7px;
+      transition: 0.3s ease-in-out;
+      cursor: pointer;
+      &:hover {
+        background: #d4ebf8;
+      }
+    }
+    button:last-child {
+      background: #d4ebf8;
+      border: none;
+      padding: 10px 20px;
+      font-weight: 600;
+      border-radius: 7px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: 0.3s ease-in-out;
+      &:hover {
+        background: #b3d2e4;
+      }
+    }
+  }
+}
+@keyframes down {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+//
+.todo-light {
+  background: white;
+  .todo-title {
+    border-bottom: 1px solid black;
+    h2 {
+      color: black;
+    }
+  }
+  .todo-btn button{
+    background: black;
+    color: white;
+  }
+  .todo-list{
+    border: 1px solid black;
+    p{
+      color: black;
+    }
+    .todo-list-task{
+      span{
+        color: black;
+      }
+    }
+  }
+  .task-adder-bg{
+    .task-adder{
+      background: rgb(27, 26, 26);
+    }
+    .input-div{
+      label{
+        color: white;
+      }
+    }
+    .task-adder-buttons{
+      button:first-child {
+        color: white;
+        &:hover{
+          color: black;
+          background: rgb(248, 248, 248);
+        }
+      }
+      button:last-child {
+        background: white;
+        &:hover{
+          background: rgb(235, 235, 235);
+        }
+      }
+    }
+  }
+}
