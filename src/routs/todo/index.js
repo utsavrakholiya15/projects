@@ -42,10 +42,10 @@ export default function ToDo() {
     };
 
     setnewTask(task);
-    if(ev.target.name==="task"){
-      if(ev.target.value.length>0){
+    if (ev.target.name === "task") {
+      if (ev.target.value.length > 0) {
         setdisableAdd(false);
-      }else{
+      } else {
         setdisableAdd(true);
       }
     }
@@ -111,6 +111,7 @@ export default function ToDo() {
                   type="text"
                   value={newTask.task}
                   name="task"
+                  autocomplete="off"
                   onChange={handleOnType}
                 ></input>
               </div>
@@ -122,6 +123,7 @@ export default function ToDo() {
                   type="text"
                   value={newTask.summary}
                   name="summary"
+                  autocomplete="off"
                   placeholder="(Optional)"
                   onChange={handleOnType}
                 ></input>
